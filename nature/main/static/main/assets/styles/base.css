@@ -1,9 +1,10 @@
 /* Import des polices */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Great+Vibes&display=swap');
 
 :root {
-    --primary: #373737FF;
-    --secondary: #ffc107;
+    --primary: #615447;
+    --secondary: #2f4634;
+    --text: #2c2b27;
 }
 
 /* Appliquer un reset global */
@@ -11,8 +12,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
+    font-family: 'EB Garamond', sans-serif;
+    font-size: 16px;
 }
 
 /* BASE : Corps de page */
@@ -23,8 +24,11 @@ html, body {
 
 body {
     justify-content: center;
-    background: linear-gradient(#30cfd0, #330867);
-    color: #000;
+    background-image: url('../../images/asfalt-dark.png');
+    background-color: #fbe1b4;
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    color: var(--text);
 }
 
 .mt-5 {
@@ -36,11 +40,12 @@ body {
 
 /* TITRES */
 h1, h2, h3 {
-    color: #ffffff;
+    color: var(--text);
 }
 
 h1 {
-    font-size: 28px;
+    font-family: "Great Vibes", cursive;
+    font-size: 70px;
 }
 
 h2 {
@@ -54,12 +59,29 @@ h3 {
 
 /* LIENS INTERACTIFS (DANS TITRES) */
 
-.title a h1, .title a h2 {
-    transition: color 0.3s ease-in-out;
+.title_logo {
+    display: flex;
 }
 
-.title a:hover h1,
-.title a:hover h2 {
+.title_logo img {
+    width: 130px;
+    height: auto;
+}
+
+.title {
+    margin-top: auto;
+    margin-bottom: auto;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+}
+
+.title_logo h1, .title_logo h2 {
+    transition: color 0.1s ease-in-out;
+}
+
+.title_logo:hover h1,
+.title_logo:hover h2 {
     color: var(--secondary);
 }
 
@@ -71,8 +93,17 @@ header {
     margin: 20px;
 }
 
-header h1, header h2, header h3 {
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+header h2, header h3 {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+header h2 {
+    margin-top: -25px;
+    margin-left: 85px;
 }
 
 header a {
@@ -97,7 +128,7 @@ header a {
     display: none;
 }
 
-.logout button, .upload-button {
+.logout button, .upload-button, .action-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -107,8 +138,15 @@ header a {
     background-color: var(--primary);
     transition: all 0.3s linear;
     cursor: pointer;
-    padding: 10px;
     height: 45px;
+}
+
+.upload-button {
+    padding: 10px;
+}
+
+.user-menu {
+    margin: 10px;
 }
 
 .user-icon {
@@ -117,20 +155,15 @@ header a {
     fill: #fff;
 }
 
-.logout button:hover, .upload-button:hover {
+.logout button:hover, .upload-button:hover, .action-button:hover {
     background-color: var(--secondary);
-    color: #000;
-}
-
-.upload-button:hover .user-icon, .upload-button:hover .upload-icon {
-    fill: #000;
 }
 
 #folderInput {
     display: none;
 }
 
-.upload-button svg {
+.upload-button svg, .action-button svg {
     width: 24px;
     height: 24px;
 }
@@ -152,21 +185,30 @@ header a {
 
 .tab a {
     border: none;
-    width: 150px;
+    width: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: var(--text);
     transition: all 0.3s linear;
     cursor: pointer;
     padding: 10px;
     height: 45px;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.03));
+}
+
+.tab a p {
+    font-size: 24px;
+}
+
+.icon_tab {
+    max-height: 50px;
+    max-width: 50px;
+    margin-right: 10px;
 }
 
 .tab a:hover {
-    background-color: var(--secondary);
-    color: #000;
+    color: var(--secondary);
+    font-weight: bold;
 }
 
 /* UTILISATEUR (Dropdown) */
@@ -200,10 +242,12 @@ header a {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #fff;
+    margin-top: 5px;
+    background-image: url('../../images/asfalt-dark.png');
+    background-color: #fbe1b4;
+    background-repeat: repeat;
+    background-size: 200px 200px;    border: 1px solid var(--primary);
     min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
     z-index: 1;
     right: 0;
     top: 45px;
@@ -214,22 +258,33 @@ header a {
     padding: 10px 16px;
     text-decoration: none;
     display: block;
-    font-weight: 500;
     transition: all 0.2s ease-in-out;
 }
 
 .dropdown-content a:hover {
     background-color: var(--secondary);
+    color: white;
 }
 
 /* MEDIA QUERIES */
-@media (max-width: 900px) {
-    header {
-        align-items: unset;
+@media (max-width: 1200px) {
+    .icon_tab {
+        display: none;
+    }
+    .tab a {
+        width: 150px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .icon_tab {
+        display: block;
+        max-height: 40px;
+        max-width: 50px;
     }
 
     .left-header {
-        height: 90px;
+        height: 120px;
     }
 
     .tab {
@@ -237,29 +292,48 @@ header a {
     }
 
     .tab a {
-        width: 120px;
-        height: 30px;
+        height: 40px;
+        width: 200px;
+        justify-content: space-between;
     }
 
     .actions {
         flex-direction: column;
-        gap: 0;
-        justify-content: space-between;
     }
 
-    .logout button, .upload-button {
+    .logout button, .upload-button, .action-button {
         height: 40px;
         width: 40px;
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 700px) {
+    header .logo {
+        display: none;
+    }
+}
+
+@media (max-width: 580px) {
+    header .logo {
+        display: block;
+    }
+
     header .title {
+        display: none;
+    }
+}
+
+@media (max-width: 420px) {
+    header .logo {
         display: none;
     }
 
     .left-header {
         width: 100%;
         justify-content: space-between;
+    }
+
+    .tab a {
+        justify-content: start;
     }
 }

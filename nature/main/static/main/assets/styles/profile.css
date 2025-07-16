@@ -1,12 +1,12 @@
 .section {
     position: relative;
-    margin: auto;
+    margin: auto auto 40px auto;
     max-width: 600px;
-    background-color: #fff;
     overflow: hidden;
-    border-radius: 7px;
-    padding: 40px;
-    margin-bottom: 20px;
+    border: 1px solid var(--primary) ;
+    outline: 2px solid var(--primary) ;
+    outline-offset: 10px;
+    padding: 30px;
 }
 
 .section h2 {
@@ -39,8 +39,6 @@ h4 {
     background-color: var(--primary);
     transition: all 0.3s linear;
     cursor: pointer;
-    font-size: 14px;
-    font-weight: 400;
 }
 
 .list li {

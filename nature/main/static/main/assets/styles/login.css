@@ -1,6 +1,13 @@
 .login {
     justify-content: center;
     display: flex;
+    max-width: 800px;
+    overflow: hidden;
+    padding: 20px;
+    border: 1px solid var(--primary) ;
+    outline: 2px solid var(--primary) ;
+    outline-offset: 10px;
+    margin: auto;
 }
 
 .login h1 {
@@ -24,7 +31,6 @@
 
 .container form {
     position: relative;
-    background-color: #fff;
     overflow: hidden;
     border-radius: 7px;
     transition: 0.3s ease;
@@ -85,8 +91,8 @@ form input, form select {
     font-weight: 400;
     color: #000;
     border-radius: 5px;
-    border: none;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--primary);
+    background-color: transparent;
     padding: 0 5px;
     height: 30px;
     margin: 3px 0;
@@ -94,11 +100,6 @@ form input, form select {
 
 #login-form input, #login-form select {
     width: 100%;
-}
-
-form input :focus,
-form input select:focus {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 form input select,
@@ -135,7 +136,6 @@ form input[type="date"]:valid {
 }
 
 .container form button:hover {
-    color: #000;
     background-color: var(--secondary);
 }
 

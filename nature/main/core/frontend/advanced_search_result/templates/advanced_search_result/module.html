@@ -38,13 +38,14 @@
     </div>
 </div>
 
-<div id="mini-map">
+
+<div id="mini-map-container">
     <button id="toggle-map-size">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#373737" >
-                <path d="M120-120v-320h80v184l504-504H520v-80h320v320h-80v-184L256-200h184v80H120Z"/>
-            </svg>
+        <path class="toggle-icon" d="M120-120v-320h80v184l504-504H520v-80h320v320h-80v-184L256-200h184v80H120Z"/>
     </button>
+    <div id="mini-map"></div>
 </div>
+
 
 {% block style %}
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />

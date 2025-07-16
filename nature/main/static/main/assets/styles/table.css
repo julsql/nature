@@ -9,18 +9,12 @@
     vertical-align: bottom;
 }
 
-tbody, td, tfoot, th, thead, tr {
-    border-color: inherit;
-    border-style: solid;
-    border-width: 0;
-}
-
 table {
     border-collapse: collapse;
 }
 
 .table > :not(:first-child) {
-    border-top: 2px solid currentColor;
+    border-top: none;
 }
 
 .table > tbody {
@@ -48,10 +42,10 @@ table {
     color: #fff;
 }
 .table .even {
-    background-color: #fff;
+    background-color: transparent;
 }
 .table .odd {
-    background-color: #F0F0F0FF;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 .table thead a {
     color: #fff;

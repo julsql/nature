@@ -1,9 +1,12 @@
 #carte {
     background-color: #fff;
     height: calc(100vh - 40px);
-    width: 100%;
+    border: 1px solid var(--primary) ;
+    outline: 2px solid var(--primary) ;
+    outline-offset: 10px;
+    margin: auto 10px auto 10px
 }
 
 #pagination-header {
-    display: none !important;
+    visibility: hidden;
 }
