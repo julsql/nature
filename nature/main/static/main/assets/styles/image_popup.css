@@ -13,6 +13,7 @@
 .popup {
     display: none;
     position: fixed;
+    flex-direction: column;
     top: 0;
     left: 0;
     width: 100%;
@@ -23,17 +24,41 @@
     z-index: 1000;
 }
 
-.popup-content {
+.popup-container {
     position: relative;
-    background: rgba(0, 0, 0, 0.7);
-    color: #fff;
+    background-image: url('../../images/asfalt-dark.png');
+    background-color: #fbe1b4;
+    background-repeat: repeat;
+    background-size: 200px 200px;
     max-width: 90%;
-    border-radius: 7px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow: visible;
+    padding: 30px 30px 0 30px;
+}
+
+.popup-border {
+    background: #dde5c0;
+    border: 1px solid var(--primary);
+    padding: 8px;
+}
+
+.popup-content {
+    position: relative;
+    margin: 10px;
+    outline: 2px solid var(--primary);
+    outline-offset: 4px;
+}
+
+#legend {
+    background-image: url('../../images/asfalt-dark.png');
+    background-color: #fbe1b4;
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    width: 100%;
+    border: 1px solid transparent;
 }
 
 #popup-img {
@@ -42,14 +67,21 @@
     height: auto;
     width: auto;
     object-fit: contain;
-    border-radius: 0 0 7px 7px;
+    border: 1px solid var(--primary);
+}
+
+#image-name {
+    position: absolute;
+    font-size: 15px;
+    top: 10px;
+    right: 30px;
 }
 
 #image-title {
     margin-top: 10px;
     text-align: center;
     word-wrap: break-word;
-    font-size: 16px;
+    font-size: 20px;
     max-width: 100%;
     padding-right: 10px;
     padding-left: 10px;
@@ -57,7 +89,7 @@
 
 #image-title > i {
     word-wrap: break-word;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 #image-info {
@@ -65,7 +97,7 @@
     word-wrap: break-word;
     font-size: 16px;
     max-width: 100%;
-    margin: auto 10px;
+    margin: auto 10px 10px 10px;
     padding-right: 10px;
     padding-left: 10px;
 }
@@ -74,12 +106,9 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
+    background-color: transparent;
     border: none;
     font-size: 20px;
-    width: 40px;
-    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -87,16 +116,16 @@
     z-index: 10;
 }
 
-button:hover {
-    background-color: rgba(0, 0, 0, 0.9);
-}
-
 #close-popup {
     position: absolute;
     background-color: transparent;
-    top: 20px;
-    right: 0;
+    top: 15px;
+    right: 5px;
     font-size: 30px;
+}
+
+#close-icon, #next-icon, #prev-icon {
+    fill: var(--primary);
 }
 
 .prev {
