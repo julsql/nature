@@ -44,6 +44,10 @@
                 </button>
             </div>
         </div>
+        <img src="{% static 'main/images/buffon.png' %}"
+             class="seal"
+             alt="buffon signature"
+        >
         <div id="legend">
             <div id="image-title"></div>
             <div id="image-info"></div>
@@ -57,22 +61,25 @@
         </button>
         <div id="mini-map"></div>
     </div>
+</div>
 
-    {% endblock %}
+<p><i>Memoria imaginibus servatur.</i></p>
 
-    {% block style %}
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+{% endblock %}
 
-    <link rel="stylesheet" href="{% static 'main/assets/styles/image_popup.css' %}"/>
-    <link rel="stylesheet" href="{% static 'main/assets/styles/mini_map.css' %}"/>
-    <link rel="stylesheet" href="{% static 'main/assets/styles/table.css' %}"/>
+{% block style %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
 
-    {% endblock %}
+<link rel="stylesheet" href="{% static 'main/assets/styles/image_popup.css' %}"/>
+<link rel="stylesheet" href="{% static 'main/assets/styles/mini_map.css' %}"/>
+<link rel="stylesheet" href="{% static 'main/assets/styles/table.css' %}"/>
 
-    {% block javascript %}
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+{% endblock %}
 
-    <script>const mapTiles = "{{ map_server|escapejs }}";</script>
-    <script src="{% static 'main/assets/scripts/mini_map.js' %}"></script>
-    <script src="{% static 'main/assets/scripts/image_popup.js' %}"></script>
-    {% endblock %}
+{% block javascript %}
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>const mapTiles = "{{ map_server|escapejs }}";</script>
+<script src="{% static 'main/assets/scripts/mini_map.js' %}"></script>
+<script src="{% static 'main/assets/scripts/image_popup.js' %}"></script>
+{% endblock %}
