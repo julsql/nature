@@ -28,6 +28,10 @@ function showMiniMap(lat, lon) {
 
             L.marker([lat, lon]).addTo(miniMap);
         }
+
+        setTimeout(() => {
+            miniMap.invalidateSize();
+        }, 0);
     } else {
         miniMapContainer.style.display = "none";
     }
